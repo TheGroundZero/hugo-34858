@@ -1,0 +1,268 @@
+baseURL: http://localhost:1313
+title: Hugo demo 34858
+subtitle: Example site for issue 34858
+
+languageCode: en-us
+DefaultContentLanguage: en
+
+theme: hello-friend-ng
+
+PygmentsCodeFences: true
+PygmentsStyle: monokai
+pygmentsUseClasses: true
+
+#rssLimit: 100
+rssFullText: true
+
+paginate: 20
+
+toc: true
+
+lastModDisplay: "Modified:"
+
+# googleAnalytics: 
+# disqusShortname: 
+
+archetypeDir: archetypes
+contentDir: content
+dataDir: data
+layoutDir: layouts
+assetDir: assets
+publishDir: public
+
+buildDrafts: false
+buildFuture: false
+buildExpored: false
+canonifyURLs: true
+
+enableRobotsTXT: true
+enableGitInfo: false
+enableEmoji: true
+enableMissingTranslationPlaceholders: false
+disableRSS: false
+disableSitemap: false
+disable404: false
+disableHugoGeneratorInject: true
+
+pluralizelisttitles: false
+
+#copyright: '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+copyright: ''
+
+permalinks:
+  blog: /blog/:year/:month/:title/
+
+author:
+  name: Seq
+
+# https://gohugo.io/getting-started/configuration-markup
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: false
+      xhtml: false
+  blackfriday:
+    angledQuotes: true
+    hrefTargetBlank: true
+    noreferrerLinks: true
+  highlight:
+    tabWidth: 2
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
+
+taxonomies:
+  tag: tags
+  category: categories
+
+params:
+  dateform: Jan 2, 2006
+  dateformShort: Jan 2
+  dateformNum: 2006-01-02
+  dateformNumTime: 2006-01-02
+
+  # Metadata mostly used in document's head
+  description: Example site for issue 34858
+  keywords: demo
+  images: ["logo.png"]
+
+  homeSubtitle: Writeups and random stuff about infosec and life
+
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  # gitUrl: 
+
+  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+  # Set "text-align: justify" to .content.
+  justifyContent: false
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts: false
+  # Add a related content section to all single posts page
+  relatedPosts: true
+
+  # Turn on/off the code-copy-button for code-fields
+  code_copy_button: true
+
+  # Directory name of your blog content (default is `content/posts`)
+  contentTypeName: blog
+
+  # Default theme "light" or "dark
+  defaultTheme: dark
+  themeColor: "#252627"
+  enableThemeToggle: true
+
+  customCSS:
+    - '/css/table.css'
+    - '/css/menu.css'
+
+  # Sharing buttons
+  # layouts/partials/sharing-buttons.html
+  enableSharingButtons: true
+
+  # Custom footer 
+  # If you want, you can easily override the default footer with your own content. 
+  #
+  footerLeft: Powered by <a href=\"http://gohugo.io\">Hugo</a>
+  footerRight: Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>
+
+  # Colors for favicons
+  favicon:
+    color:
+      mask: "#e68101"
+      msapplication: "#e68101"
+      theme: "#e68101"
+
+  logo:
+    logoText: whoami > seq
+    # Set to a valid CSS color to change the cursor in the logo.
+    logoCursorColor: "#e68101"
+
+
+  # Social icons
+  social:
+    - name: twitter
+      url: https://twitter.com/GoHugoIO
+    - name: github
+      url: https://github.com/TheGroundZero
+
+languages:
+  en:
+    languageName: 'English'
+    menu:
+      main:
+        - identifier: blog
+          name: Blog
+          url: /blog/
+          weight: 10
+        - identifier: about
+          name: About
+          url: /about/
+          weight: 20
+        - identifier: shoppinglist
+          name: Shopping
+          url: /shoppinglist/
+          weight: 80
+        - identifier: privacy
+          name: Privacy
+          url: /privacy/
+          weight: 99
+  nl:
+    languageName: 'Nederlands'
+    menu:
+      main:
+        - identifier: blog
+          name: Blog
+          url: /blog/
+          weight: 10
+        - identifier: about
+          name: Over ons
+          url: /about/
+          weight: 20
+        - identifier: shoppinglist
+          name: Shopping
+          url: /shoppinglist/
+          weight: 80
+        - identifier: privacy
+          name: Privacy
+          url: /privacy/
+          weight: 99
+
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
+    - identifier: shoppinglist
+      name: Shopping
+      url: /shoppinglist/
+      weight: 80
+    - identifier: privacy
+      name: Privacy
+      url: /privacy/
+      weight: 99
+
+privacy:
+  disqus:
+    disable: false
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: true
+  instagram:
+    disable: false
+    simple: true
+  twitter:
+    disable: false
+    enableDNT: true
+    simple: true
+  vimeo:
+    disable: false
+    simple: true
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+imaging:
+  exif:
+    # Regexp matching the fields you want to Exclude from the (massive) set of Exif info
+    # available. As we cache this info to disk, this is for performance and
+    # disk space reasons more than anything.
+    # If you want it all, put ".*" in this config setting.
+    # Note that if neither this or ExcludeFields is set, Hugo will return a small
+    # default set.
+    includeFields: 
+
+    # Regexp matching the Exif fields you want to exclude. This may be easier to use
+    # than IncludeFields above, depending on what you want.
+    excludeFields: .*
+
+    # Hugo extracts the "photo taken" date/time into .Date by default.
+    # Set this to true to turn it off.
+    disableDate: true
+
+    # Hugo extracts the "photo taken where" (GPS latitude and longitude) into
+    # .Long and .Lat. Set this to true to turn it off.
+    disableLatLong: true

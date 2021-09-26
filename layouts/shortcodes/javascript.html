@@ -1,0 +1,5 @@
+{{ if .Get "src" }}
+    <script type="text/javascript" src="{{ .Get "src" | safeURL }}"></script>
+{{ else }}
+    <script type="text/javascript">{{.Get 0}}</script>
+{{ end }}
